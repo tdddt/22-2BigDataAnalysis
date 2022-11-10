@@ -5,8 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyPage</title>
+    <style>
+        .menu {
+            text-align: center;
+        }
+        .button {
+            background-color: #00462A;
+            border: none;
+            color: white;
+            font-size: 16px;
+            padding: 15px 30px;
+            width: 150px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #779c74;
+        }
+
+        .buttonReverse {
+            color: #00462A;
+            font-size: 16px;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        div {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1 style="text-align: center;">마이페이지</h1>
+    <div class="menu">
+        <div>
+            <a class="button" href="./userinfo.html">추가 정보 입력/수정</a>
+        </div>
+        <div>
+            <a class="button" href="">체크리스트</a>
+        </div>
+        <div>
+            <a class="buttonReverse" href="./main.html">뒤로가기</a>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,25 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
     <style>
-        .menu{
+        .menu {
             text-align: center;
+        }
+        .button {
+            background-color: #00462A;
+            border: none;
+            color: white;
+            font-size: 16px;
+            padding: 15px 30px;
+            width: 150px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #779c74;
+        }
+
+        .buttonReverse {
+            color: #00462A;
+            font-size: 16px;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        div {
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
+
 <body>
     <h1 style="text-align: center;">메뉴</h1>
     <div class="menu">
-        <a href="./cancerpatientinfo.html">암환자 정보 확인</a><p>
-        <a href="./mypage.html">마이페이지</a><p>
-        <a href="./cancerinfo.html">암 정보 확인</a><p>
-        <a href="./hospitalinfo.html">병원 정보 확인</a><p>
-        <a href="./doctorinfo.html">의사 정보 확인</a><p>
-        <a href="./signin.html">로그아웃</a>
+        <div>
+            <a class="button" href="./cancerpatientinfo.html">암환자 정보 확인</a>
+        </div>
+        <div>
+            <a class="button" href="./mypage.html">마이페이지</a>
+        </div>
+        <div>
+            <a class="button" href="./cancerinfo.html">암 정보 확인</a>
+        </div>
+        <div>
+            <a class="button" href="./hospitalinfo.html">병원 정보 확인</a>
+        </div>
+        <div>
+            <a class="button" href="./doctorinfo.html">의사 정보 확인</a>
+        </div>
+        <div>
+            <a class="buttonReverse" href="./signin.html">로그아웃</a>
+        </div>
     </div>
 </body>
+
 </html>

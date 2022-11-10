@@ -1,21 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SignIn</title>
+    <style>
+        .container {
+            flex-direction: column;
+            text-align: center;
+        }
+        /*
+        .rowcontainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-areas:
+                ". text input ."
+        }
+        */
+        .input {
+            width:250px;
+            height: 40px;
+        }
+        .button {
+            background-color: #00462A;
+            border: none;
+            color: white;
+            font-size: 16px;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #779c74;
+        }
+        div{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        /*
+        span{
+            text-align: right;
+            grid-area: text;
+        }
+        .input{
+            text-align: left;
+            grid-area: input;
+        }*/
+    </style>
 </head>
+
 <body>
-    <h1 style="text-align: center;">로그인</h1>
-    <form action="signin.php" method="post" style="text-align: center;">
-        ID: <input type="text" name="id"> <p>
-        PW: <input type="text" name="pw"> <p>
-        <input type="submit" value="로그인">
-    </form>
-    <div style="text-align: center;">
-        <a href="signup.html">회원가입</a><p>
-        <a href="main.html" style="text-align: center;">메인메뉴로 바로가기</a>
+    <div class="container">
+        <h1 >로그인</h1>
+        <form action="signin.php" method="post">
+            <div class="rowcontainer" >
+            <span>아이디: </span><input type="text" name="id" class="input">
+            </div>
+            <div class="rowcontainer">
+            <span>비밀번호: </span><input type="text" name="pw" class="input">
+            </div>
+            <div>
+                <input type="submit" class="button" id="signin" value="로그인">
+                <a class="button" id="signup" href="signup.html">회원가입</a>
+            <div>
+        </form>
+        <div style="text-align: center;">
+            <a id="temp" href="main.html" style="text-align: center;">메인메뉴로 바로가기</a>
+        </div>
     </div>
 </body>
+
 </html>

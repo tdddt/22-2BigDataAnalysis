@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp</title>
+    <title>UserInfo</title>
     <style>
         .input {
             width:250px;
@@ -36,14 +36,18 @@
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">회원가입</h1>
-    <form action="signup.php" method="post" style="text-align: center;">
-        이름: <input type="text" name="name" class="input"> <p>
-        아이디: <input type="text" name="id" class="input"> <p>
-        비밀번호: <input type="text" name="pw" class="input"> <p>
-        이메일: <input type="text" name="email" class="input"> <p>
-        <input class="button" type="submit" value="회원가입">
+    <h1 style="text-align: center;">추가 정보 입력/수정</h1>
+    <form action="userinfo.php" method="post" style="text-align: center;">
+        나이: <input type="text" name="name" class="input"><p>
+        성별: <input type="text" name="sex" class="input"><p>
+        음주여부: <input type="text" name="drink" class="input"><p>
+        흡연여부: <input type="text" name="smoke" class="input"><p>
+        키: <input type="text" name="height" class="input"><p>
+        몸무게: <input type="text" name="weight" class="input"><p>
+        지역: <input type="text" name="location" class="input"><p>
+        <input class="button" type="submit" value="저장하기">
+        <input class="button" type="submit" value="초기화">
     </form>
-    <div style="text-align: center;" ><a href="signin.html" class="buttonReverse" style="text-align: center;">뒤로가기</a></div>
+    <div style="text-align: center;"><a class="buttonReverse" href="mypage.html" style="text-align: center;">뒤로가기</a></div>
 </body>
 </html>
