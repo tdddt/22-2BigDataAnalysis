@@ -1,6 +1,6 @@
-# auto_increment쓰지 말기
+use team09;
 
-create table 암환자 {   
+create table patient (   
     암환자아이디 int not null,
     진단연령 int,
     음주종류 int,
@@ -11,20 +11,20 @@ create table 암환자 {
     암진단후생존일 int,
     암종류 varchar(30),
     primary key(암환자아이디)
-}
+);
 
-create table 회원 {
+create table user (
     회원아이디 int not null, 
     이름 varchar(25) not null,
     아이디 varchar(25) not null,
     비밀번호 varchar(25) not null,
     이메일 varchar(30) not null,
     primary key(회원아이디)
-}
+);
 
-CREATE INDEX 회원인덱스 ON 회원(회원아이디);
+#CREATE INDEX 회원인덱스 ON user(회원아이디);
 
-create table 회원정보 {
+create table userinfo (
     회원아이디 int, 
     나이 int,
     성별 varchar(10),
@@ -35,12 +35,15 @@ create table 회원정보 {
     지역 varchar(20),
     primary key(회원아이디),
     foreign key(회원아이디) references user(회원아이디)
-}
+);
 
-CREATE INDEX 회원정보인덱스 ON 회원정보(회원아이디);
+#CREATE INDEX 회원정보인덱스 ON userinfo(회원아이디);
+
+/*암환자 insert*/
+load data local infile 'C:\\xampp\\htdocs\\team09\\patient.csv' into table patient fields terminated by ',' lines terminated by '\n';
 
 /*회원 insert (회원아이디,이름,아이디,비밀번호,이메일)*/
-insert into 회원 values (1,'Jake','jake1225','jakee1225','jake1225@gamil.com'),
+insert into user values (1,'Jake','jake1225','jakee1225','jake1225@gamil.com'),
     (2,'Amy','ammma','amy111','amyma111@gamil.com'),
     (3,'Lucia','luca_cia','lluucciiaa321','lluu123@gmail.com'),
     (4,'Robert','robotlover','revoltobor','robertrebor@gmail.com'),
@@ -62,7 +65,7 @@ insert into 회원 values (1,'Jake','jake1225','jakee1225','jake1225@gamil.com')
     (20,'Logan','lloll_logan','lloll0ll','lloll0ll@gmal.com');
 
 /*회원정보 insert (회원아이디,나이,성별,음주종류,흡연여부,키,몸무게,지역)*/
-insert into 회원정보 values (5,18,'male',0,0,182.1,83,'동대문구'),
+insert into userinfo values (5,18,'male',0,0,182.1,83,'동대문구'),
     (17,20,'female',0,0,168.5,65.2,'강서구'),
     (7,22,'female',1,0,155.4,55,'송파구'),
     (2,24,'female',0,1,172.8,72.5,'중구'),
