@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>체크리스트</title>
+  <style>
+    .button{
+     background-color: #00462A;
+     border: none;color: white;font-size: 16px;padding: 15px 30px;
+     text-align: center;text-decoration: none;
+     display: inline-block;cursor: pointer;
+}
+    .button:hover{
+     background-color: #779c74;
+   }
+  </style>
+</head>
+<body><br><center>
+  <h2>체크리스트</h2>
+  <p>4대 암에 대한 체크리스트를 제공합니다. 검사를 원하는 항목의 버튼을 클릭해주세요.</p><br>
+  <form method="get" action="newChecklist.php">
+    <input type="hidden" name="id" value="10">
+    <p><input type="submit" class="button" name="name" value="위암"></p>
+    <p><input type="submit" class="button" name="name" value="폐암"></p>
+    <p><input type="submit" class="button" name="name" value="간암"></p>
+    <p><input type="submit" class="button" name="name" value="대장암"></p>
+  </form>
+  <form method="get" action="showChecklist.php">
+    <input type="hidden" name="id" value="10">
+    <p><input type="submit" class="button" value="저장된 결과 확인하기"></p>
+  </form>
+</center></body>
+</html>

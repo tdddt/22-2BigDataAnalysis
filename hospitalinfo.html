@@ -8,5 +8,13 @@
 </head>
 <body>
     <h1 style="text-align: center;">병원 정보 확인</h1>
+    <form action="hospitalinfo.php" method="post" style="text-align: center;">
+        <select name="choice">
+            <option value="location">지역</option>
+            <option value="hospital">병원</option>
+        </select>
+        <input type="text" name="value">
+    <input type="submit" value="검색">
+    <a href="main.html" style="text-align: center;">뒤로가기</a>
 </body>
 </html>
