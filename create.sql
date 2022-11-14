@@ -63,7 +63,7 @@ create table doctorinfo (
 create table hospitalComment (
     commentId int not null auto_increment,
     userId int not null,
-    hospital_name varchar(30),
+    hospital_name varchar(20),
     comment varchar(100),
     primary key(commentId),
     foreign key(userId) references userlog(userId),
@@ -134,7 +134,7 @@ CREATE TABLE 폐암체크리스트(
 );
 
 create table cancerinfo(
-    cancer_name varchar(30) not null,
+    cancertype varchar(30) not null,
     Cdefinition text not null,
     cause text not null,
     symptom text not null,
@@ -144,5 +144,17 @@ create table cancerinfo(
     complication text not null,
     prevention text not null,
     department varchar(100) not null,
-    primary key(cancer_name)
+    primary key(cancertype)
 );
+
+create table cancerComment(
+    commentId int not null auto_increment,
+    userId int not null,
+    cancertype varchar(30) not null,
+    comment varchar(100),
+    primary key(commentId),
+    foreign key(userId) references userlog(userId),
+    foreign key(cancertype) references cancerinfo(cancertype)
+);
+
+CREATE INDEX cancertype ON cancerComment(cancertype);
