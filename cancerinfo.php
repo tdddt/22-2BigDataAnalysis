@@ -9,6 +9,7 @@
 </head>
 <body>
   <h1 style="text-align: center;">암 정보 확인</h1>
+  <div style="text-align: center;" ><a href="cancerinfofind.html" class="buttonReverse" style="text-align: center;">뒤로가기</a></div>
   <div class="v1_5">
   <div class="v2_26"></div>
   <div class="v2_23"></div>
@@ -20,20 +21,49 @@
   <div class="v2_17"></div>
   <div class="v2_16"></div>
   <div class="v2_14"></div>
-  <span class="v3_29">암 종류</span> <span class = "v4_1">위암</span>
-  <span class="v3_30">정의</span> <span class = "v4_2">위의 점막에서 발생하는 악성 종양</span>
-  <span class="v3_31">원인</span> <span class = "v4_3">만성 위축성 위염, 장 이형성, 위소장 문합술, 식이 요인, 헬리코박터 파일로리균 감염, 유전 요인, 기타 환경적 요인 등</span>
-  <span class="v3_32">증상</span> <span class = "v4_4">상복부 불쾌함, 상복부 통증, 소화불량, 팽만감, 식욕 부진 등</span>
-  <span class="v3_33">진단/검사</span> <span class = "v4_5">방사선 검사(위장 조영술)또는 위 내시경, 조직검사</span>
-  <span class="v3_34">치료</span> <span class = "v4_6">절제 수술, 내시경 수술, 항암 화학 치료</span>
-  <span class="v3_36">경과</span> <span class = "v4_7">병기에 따라 큰 차이가 있으며 조기 위암으로 진단되는 경우 예후가 매우 좋고 위암 완치율이 향상되고 있음</span>
-  <span class="v3_37">합병증</span> <span class = "v4_8">위 절제술 후유증, 복수, 장폐색, 기타</span>
-  <span class="v3_38">예방/<br>조기발견</span> <span class = "v4_9">정기적인 위내시경 검사</span>
-  <span class="v3_39">진료과</span> <span class = "v4_10">소화기내과, 종양내과, 방사선종양학과, 위장관외과, 암병원</span>
-  <div style="text-align: center;" ><a href="cancerinfofind.html" class="buttonReverse" style="text-align: center;">뒤로가기</a></div></div>
+  <span class="v3_29">암 종류</span>
+  <span class="v3_30">정의</span>
+  <span class="v3_31">원인</span>
+  <span class="v3_32">증상</span>
+  <span class="v3_33">진단/검사</span>
+  <span class="v3_34">치료</span>
+  <span class="v3_36">경과</span>
+  <span class="v3_37">합병증</span>
+  <span class="v3_38">예방/<br>조기발견</span>
+  <span class="v3_39">진료과</span>
+<?php
+$mysqli = mysqli_connect("localhost","team09","team09","team09");
+if(mysqli_connect_errno())
+{
+    printf("Connect failed: %s\n",mysqli_connect_error());
+    exit();
+}
+else
+{
+    $name = $_POST['cancername'];
+    $sql ="select * from cancerinfo where cancer_name='$name'";
+
+    $res = mysqli_query($mysqli, $sql);
+
+    $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
+
+    echo '<span class = "v4_1">'.$row["cancer_name"].'</span>';
+    echo '<span class = "v4_2">'.$row["definition"].'</span>';
+    echo '<span class = "v4_3">'.$row["cause"].'</span>';
+    echo '<span class = "v4_4">'.$row["symptom"].'</span>';
+    echo '<span class = "v4_5">'.$row["diagnosis"].'</span>';
+    echo '<span class = "v4_6">'.$row["cure"].'</span>';
+    echo '<span class = "v4_7">'.$row["progress"].'</span>';
+    echo '<span class = "v4_8">'.$row["complication"].'</span>';
+    echo '<span class = "v4_9">'.$row["prevention"].'</span>';
+    echo '<span class = "v4_10">'.$row["department"].'</span>';
+}
+mysqli_free_result($res);
+mysqli_close($mysqli);
+?>
 </body>
 </html>
-<br/><br/> <style>* {
+<style>* {
   box-sizing: border-box;
 }
 body {
@@ -143,7 +173,7 @@ body {
   width: 135px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 103px;
+  top: 100px;
   left: 81px;
   font-family: Inter;
   font-weight: Regular;
@@ -155,7 +185,7 @@ body {
   width: 98px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 224px;
+  top: 221px;
   left: 99px;
   font-family: Inter;
   font-weight: Regular;
@@ -167,7 +197,7 @@ body {
   width: 98px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 345px;
+  top: 342px;
   left: 99px;
   font-family: Inter;
   font-weight: Regular;
@@ -179,7 +209,7 @@ body {
   width: 98px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 466px;
+  top: 463px;
   left: 99px;
   font-family: Inter;
   font-weight: Regular;
@@ -191,7 +221,7 @@ body {
   width: 181px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 587px;
+  top: 584px;
   left: 58px;
   font-family: Inter;
   font-weight: Regular;
@@ -203,7 +233,7 @@ body {
   width: 98px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 708px;
+  top: 705px;
   left: 99px;
   font-family: Inter;
   font-weight: Regular;
@@ -215,7 +245,7 @@ body {
   width: 98px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 829px;
+  top: 826px;
   left: 99px;
   font-family: Inter;
   font-weight: Regular;
@@ -227,7 +257,7 @@ body {
   width: 140px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 950px;
+  top: 947px;
   left: 78px;
   font-family: Inter;
   font-weight: Regular;
@@ -239,7 +269,7 @@ body {
   width: 198px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 1060px;
+  top: 1057px;
   left: 49px;
   font-family: Inter;
   font-weight: Regular;
@@ -251,7 +281,7 @@ body {
   width: 138px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 1210px;
+  top: 1207px;
   left: 79px;
   font-family: Inter;
   font-weight: Regular;
@@ -263,7 +293,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 98px;
+  top: 100px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;
@@ -275,7 +305,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 219px;
+  top: 221px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;
@@ -287,7 +317,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 340px;
+  top: 342px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;
@@ -299,7 +329,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 461px;
+  top: 463px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;
@@ -311,7 +341,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 582px;
+  top: 584px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;
@@ -323,7 +353,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 703px;
+  top: 705px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;
@@ -335,7 +365,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 824px;
+  top: 826px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;
@@ -347,7 +377,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 945px;
+  top: 947px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;
@@ -359,7 +389,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 1055px;
+  top: 1082px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;
@@ -371,7 +401,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 1205px;
+  top: 1207px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;

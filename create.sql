@@ -1,87 +1,148 @@
 use team09;
 
 create table patient (   
-    암환자아이디 int not null,
-    진단연령 int,
-    음주종류 int,
-    흡연여부 int,
-    키 float,
-    몸무게 float,
-    사망여부 int,
-    암진단후생존일 int,
-    암종류 varchar(30),
-    primary key(암환자아이디)
+    patientId int not null,
+    age int,
+    drink int,
+    smoke int,
+    height float,
+    Pweight float,
+    death int,
+    survivaldays int,
+    cancertype varchar(30),
+    primary key(patientId)
 );
 
-create table user (
-    회원아이디 int not null, 
-    이름 varchar(25) not null,
-    아이디 varchar(25) not null,
-    비밀번호 varchar(25) not null,
-    이메일 varchar(30) not null,
-    primary key(회원아이디)
+create table userlog (
+    userId int not null auto_increment, 
+    userName varchar(25) not null,
+    id varchar(25) not null,
+    pw varchar(25) not null,
+    email varchar(30) not null,
+    primary key(userId)
 );
 
-#CREATE INDEX 회원인덱스 ON user(회원아이디);
+CREATE INDEX userindex ON userlog(userId);
 
+/*userId, age,sex,drink,smoke,height,Uweight,Ulocation*/
 create table userinfo (
-    회원아이디 int, 
-    나이 int,
-    성별 varchar(10),
-    음주종류 int,
-    흡연여부 int,
-    키 int,
-    몸무게 int,
-    지역 varchar(20),
-    primary key(회원아이디),
-    foreign key(회원아이디) references user(회원아이디)
+    userId int, 
+    age int,
+    sex varchar(10),
+    drink int,
+    smoke int,
+    height int,
+    Uweight int,
+    Ulocation varchar(20),
+    primary key(userId),
+    foreign key(userId) references userlog(userId)
 );
 
-#CREATE INDEX 회원정보인덱스 ON userinfo(회원아이디);
+CREATE INDEX userId ON userinfo(userId);
 
-/*암환자 insert*/
-load data local infile 'C:\\xampp\\htdocs\\team09\\patient.csv' into table patient fields terminated by ',' lines terminated by '\n';
+create table hospitalinfo(
+    hospital_name varchar(20) not null,
+    location varchar(20),
+    location_detail varchar(20),
+    number varchar(20),
+    site varchar(9999),
+    primary key(hospital_name)
+);
 
-/*회원 insert (회원아이디,이름,아이디,비밀번호,이메일)*/
-insert into user values (1,'Jake','jake1225','jakee1225','jake1225@gamil.com'),
-    (2,'Amy','ammma','amy111','amyma111@gamil.com'),
-    (3,'Lucia','luca_cia','lluucciiaa321','lluu123@gmail.com'),
-    (4,'Robert','robotlover','revoltobor','robertrebor@gmail.com'),
-    (5,'Joshua','shuu10','shuajo1111','joshuauu22@gmail.com'),
-    (6,'Aaron','inthemountain','aaronmoun4','inthemountain@gmail.com'),
-    (7,'Mary','marychrist','christ43','marymart1225@gmail.com'),
-    (8,'Linda','dadas2','linlins2','dalins2@gmail.com'),
-    (9,'Olivia','olive202','olivia2o2','olive2o2@gmail.com'),
-    (10,'Sally','sallaa','sa54321','sally54321@gmail.com'),
-    (11,'Ines','mivida','ines327','ines327@gmail.com'),
-    (12,'Isabella','issac11','isabellaa415','isa_0_0@gmail.com'),
-    (13,'Liam','li010203','liamail123','liamail123@gmail.com'),
-    (14,'Mason','miro55','masonpw','mamamia@gmail.com'),
-    (15,'Michael','angel3_3','michael44','angel3_3@gmail.com'),
-    (16,'Remi','qwer1234','1234qwer','qqwweerr@gmail.com'),
-    (17,'Rowan','rowwanx0x','pwpwpwpw','rowanawor17@gmail.com'),
-    (18,'Kai','googling22','kai26kai','kai26@gmail.com'),
-    (19,'Andrea','andrrew','notandrrew00','andrea00@gmail.com'),
-    (20,'Logan','lloll_logan','lloll0ll','lloll0ll@gmal.com');
+create table doctorinfo (
+    doctor_ID int not null,
+    doctor_name varchar(5),
+    hospital varchar(20),
+    department varchar(20),
+    field varchar(50),
+    site varchar(9999),
+    primary key(doctor_ID),
+    foreign key(hospital) references hospitalinfo(hospital_name)
+);
 
-/*회원정보 insert (회원아이디,나이,성별,음주종류,흡연여부,키,몸무게,지역)*/
-insert into userinfo values (5,18,'male',0,0,182.1,83,'동대문구'),
-    (17,20,'female',0,0,168.5,65.2,'강서구'),
-    (7,22,'female',1,0,155.4,55,'송파구'),
-    (2,24,'female',0,1,172.8,72.5,'중구'),
-    (10,28,'female',1,0,188.6,85.7,'은평구'),
-    (14,28,'male',2,1,179.4,77.7,'노원구'),
-    (3,33,'female',0,0,164.2,60.1,'서대문구'),
-    (18,35,'male',99,1,162.8,60.6,'서대문구'),
-    (15,38,'male',0,1,177.5,64.8,'강남구'),
-    (11,39,'female',99,0,167.3,62.4,'강남구'),
-    (12,41,'female',0,1,158.7,50.9,'은평구'),
-    (13,44,'male',2,0,157.2,52.7,'영등포구'),
-    (4,46,'male',1,1,182.4,76.3,'강동구'),
-    (19,51,'female',2,0,162.5,65.1,'관악구'),
-    (1,52,'male',1,1,164.3,68.7,'동작구'),
-    (9,55,'female',0,1,156.4,51.6,'용산구'),
-    (16,56,'male',99,0,154.8,53.2,'마포구'),
-    (8,61,'female',1,0,153.9,46.6,'금천구'),
-    (6,62,'male',2,1,172.5,65.1,'도봉구'),
-    (20,67,'male',2,0,182.1,74.9,'구로구');
+create table hospitalComment (
+    commentId int not null auto_increment,
+    userId int not null,
+    hospital_name varchar(30),
+    comment varchar(100),
+    primary key(commentId),
+    foreign key(userId) references userlog(userId),
+    foreign key(hospital_name) references hospitalInfo(hospital_name)
+);
+
+CREATE INDEX hospital_name ON hospitalComment(hospital_name);
+
+create table doctorComment(
+    commentId int not null auto_increment,
+    userId int not null,
+    doctor_ID int not null,
+    comment varchar(100),
+    primary key(commentId),
+    foreign key(userId) references userlog(userId),
+    foreign key(doctor_ID) references doctorInfo(doctor_ID)
+);
+
+CREATE INDEX doctor_ID ON doctorComment(doctor_ID);
+
+create table surviveAll(
+    cancertype varchar(20) not null,
+    sex varchar(20),
+    occuryear text,
+    patientnum int(10),
+    survive double(5, 2)
+);
+
+create table occurnumAll(
+    cancertype varchar(20) not null,
+    sex varchar(20),
+    age text,
+    patientnum int(10)
+);
+
+/*유저 체크 결과 들어감*/
+CREATE TABLE checkResult(
+  USER_ID INT(11) NOT NULL,
+  암종류 VARCHAR(30),
+  체크정보 TEXT,
+  count INT(11),
+  primary key(USER_ID),
+  foreign key(USER_ID) references userlog(userId)
+);
+
+/*위암 https://post.naver.com/viewer/postView.nhn?volumeNo=28534977&memberNo=10551594*/
+CREATE TABLE 위암체크리스트(
+  id INT(11) NOT NULL,
+  question TEXT NOT NULL
+);
+
+/*간암  http://anam.kumc.or.kr/info/self_diagnosis_reg_09.jsp?ST_NO=9&cPage=2&SEARCH_DS_CODE=Y&SEARCH_BNO=500&SEARCH_BOARD_ID=S001*/
+CREATE TABLE 간암체크리스트(
+  id INT(11) NOT NULL,
+  question TEXT NOT NULL
+);
+
+/*대장암 https://all-review-story.tistory.com/entry/%EB%8C%80%EC%9E%A5%EC%95%94-%EC%9E%90%EA%B0%80-%EC%A7%84%EB%8B%A8-%EC%B2%B4%ED%81%AC-%EB%A6%AC%EC%8A%A4%ED%8A%B8-5%EA%B0%9C-%EC%9D%B4%EC%83%81-%EB%90%9C%EB%8B%A4%EB%A9%B4-%EB%AC%B4%EC%A1%B0%EA%B1%B4-%EB%8C%80%EC%9E%A5-%EB%82%B4%EC%8B%9C%EA%B2%BD-%EA%B2%80%EC%82%AC%EB%A5%BC-%EB%B0%9B%EC%95%84%EC%95%BC*/
+CREATE TABLE 대장암체크리스트(
+  id INT(11) NOT NULL,
+  question TEXT NOT NULL
+);
+
+/*폐암 https://www.healthinnews.co.kr/news/articleView.html?idxno=25116*/
+CREATE TABLE 폐암체크리스트(
+  id INT(11) NOT NULL,
+  question TEXT NOT NULL
+);
+
+create table cancerinfo(
+    cancer_name varchar(30) not null,
+    Cdefinition text not null,
+    cause text not null,
+    symptom text not null,
+    diagnosis text not null,
+    cure text not null,
+    progress text not null,
+    complication text not null,
+    prevention text not null,
+    department varchar(100) not null,
+    primary key(cancer_name)
+);

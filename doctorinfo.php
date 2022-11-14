@@ -5,21 +5,25 @@ if(mysqli_connect_errorno()){
     exit();
 }
 else {
-    $sql = "select * from doctorinfo where doctor_name=name";
+    $sql = "select * from doctorinfo where doctor_name=".$name;
     $res=mysqli_query($mysqli, $sql);
-    if($res){
+    if ($res) {
         while ($newArray=mysqli_fetch_array($res, MYSQLI_ASSOC)) {
-            $doctor_name=$newArray['doctor_name']
-            $hospital=$newArray['hospital']
-            $department=$newArray['department']
-            $field=$newArray['field']
-            $site=$newArray['site']
-            echo <tr><td>doctor_name</td><td>hospital</td><td>department</td><td>field</td><td>site</td></tr>
-            <tr><td>$doctor_name</td><td>$hospital</td><td>$department</td><td>$field</td><td>$site</td></tr>
+            $doctor_ID=$newArray['doctor-ID'];
+            $doctor_name=$newArray['doctor_name'];
+            $hospital=$newArray['hospital'];
+            $department=$newArray['department'];
+            $field=$newArray['field'];
+            $site=$newArray['site'];
+            echo "<table border=1 cellspacing=0 cellpading=0>
+            <tr><td>doctor_ID</td><td>doctor_name</td><td>hospital</td><td>department</td><td>field</td><td>site</td></tr>
+            <tr><td>doctor_ID</td><td>$doctor_name</td><td>$hospital</td><td>$department</td><td>$field</td><td>$site</td></tr>
+            </table>";
+        
         }
-        else {
-            printf("Could not retrieve records: %s\n", mysqli_error($mysqli));
-        }
+    }
+    else {
+        printf("Could not retrieve records: %s\n", mysqli_error($mysqli));
     }
 }
 mysqli_free_result($res);

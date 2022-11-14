@@ -1,9 +1,10 @@
 <?php
 /*DB 연결*/
-$conn= mysqli_connect("localhost","root","","team09");
+$conn= mysqli_connect("localhost","team09","team09","team09");
 
 $var=$_GET['name'];
 $user_id=$_GET['id'];
+echo $user_id;
 ?>
 <html>
 <head>
@@ -36,9 +37,10 @@ $i=1;
 문제 테이블에서 번호에 해당하는것만 출력가능함 WHERE id IN (1,2,4....) 이런식으로*/
 while($row=mysqli_fetch_array($result)){
   echo '<p><input type="checkbox" name="list[]" value="'.$i.'"><label>'
-      .$row['질문'].'</label></p>';
+      .$row['question'].'</label></p>';
   $i=$i+1;
 }
+mysqli_close($conn);
 ?>
 <input type="hidden" name="name" value="<?=$var?>">
 <?php echo '<input type="hidden" name="id" value="'.$user_id.'">';?>
