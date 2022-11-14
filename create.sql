@@ -67,7 +67,7 @@ create table hospitalComment (
     comment varchar(100),
     primary key(commentId),
     foreign key(userId) references userlog(userId),
-    foreign key(hospital_name) references hospitalInfo(hospital_name)
+    foreign key(hospital_name) references hospitalinfo(hospital_name)
 );
 
 CREATE INDEX hospital_name ON hospitalComment(hospital_name);
@@ -79,7 +79,7 @@ create table doctorComment(
     comment varchar(100),
     primary key(commentId),
     foreign key(userId) references userlog(userId),
-    foreign key(doctor_ID) references doctorInfo(doctor_ID)
+    foreign key(doctor_ID) references doctorinfo(doctor_ID)
 );
 
 CREATE INDEX doctor_ID ON doctorComment(doctor_ID);
