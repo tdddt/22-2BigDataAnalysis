@@ -13,6 +13,12 @@
         $result3 = $stmt3->get_result();
         $row3 = mysqli_fetch_array($result3);
 
+        if(($_POST['sex']!='female') AND ($_POST['sex']!='male')){
+            echo "<script>alert('성별은 female 혹은 male로 입력해주세요.');</script>";
+            echo "<script>location.href='./userinfo.php';</script>";
+            exit();
+        }
+
         if(!isset($row3['userId'])){ //없으면 생성
             //userinfo에 userId가 없다면 insert
             $sql="INSERT into userinfo values (?,?,?,?,?,?,?,?)";

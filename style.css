@@ -1,0 +1,50 @@
+.button, .button_long{
+ background-color: #00462A;
+ border: none;
+ color: white;
+ font-size: 16px;
+ padding: 15px 30px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ cursor: pointer;
+}
+.button{
+  width: 150px;
+}
+.button:hover{
+ background-color: #779c74;
+}
+.button_long:hover{
+ background-color: #779c74;
+}
+.buttonReverse {
+    color: #00462A;
+    font-size: 16px;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.checklistBox {
+  border:1px solid ;
+  padding:30px;
+  width:400px;
+  margin:50px;
+}
+.boxWrapper{
+  width:650px;
+}
+.statisticsBox {
+  float:left;
+  padding:30px;
+  margin:10px;
+
+}

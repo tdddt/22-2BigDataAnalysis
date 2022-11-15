@@ -45,60 +45,104 @@
         //이미 존재하는 아이디라면 새로 생성할 수 없음.
         $check = "SELECT id from userlog";
         $res = mysqli_query($mysqli,$check);
-            if ($res) {
-                while ($newArray=mysqli_fetch_array($res, MYSQLI_ASSOC)) {
-                    if($newArray['id']===$_POST['id']){
-                        echo "<script>alert('이미 존재하는 아이디입니다. 다른 아이디로 입력해주세요.');</script>";
-                        echo("<script>location.href='./signup.html';</script>");
-                        exit;  
-                    }                
-                }
+        if ($res) {
+            while ($newArray=mysqli_fetch_array($res, MYSQLI_ASSOC)) {
+                if($newArray['id']===$_POST['id']){
+                    echo "<script>alert('이미 존재하는 아이디입니다. 다른 아이디로 입력해주세요.');</script>";
+                    echo("<script>location.href='./signup.html';</script>");
+                    exit;  
+                }                
             }
-            else {
-                printf("Could not retrieve records: %s\n", mysqli_error($mysqli));
-            }
-
-        $sql = "INSERT into userlog(userName,id,pw,email) values (?,?,?,?);";
-        if($stmt = mysqli_prepare($mysqli, $sql)){
+        }
+        else {
+            printf("Could not retrieve records: %s\n", mysqli_error($mysqli));
+        }
+        
+        //transaction
+        $mysqli->autocommit(false); 
+        try {
+            $sql = "INSERT into userlog(userName,id,pw,email) values (?,?,?,?);";
+            $stmt = mysqli_prepare($mysqli, $sql);
             mysqli_stmt_bind_param($stmt, "ssss", $inputName, $inputId, $inputPw, $inputEmail);
+
             if(empty($_POST['name'])) {
-              echo "<script>alert('이름을 입력해주세요.');</script>";
-              echo("<script>location.href='./signup.html';</script>");
-              exit;
+                echo "<script>alert('이름을 입력해주세요.');</script>";
+                echo("<script>location.href='./signup.html';</script>");
+                exit;
             }
             $inputName = $_POST['name'];
 
             if(empty($_POST['id'])) {
-              echo "<script>alert('아이디를 입력해주세요.');</script>";
-              echo("<script>location.href='./signup.html';</script>");
-              exit;
+                echo "<script>alert('아이디를 입력해주세요.');</script>";
+                echo("<script>location.href='./signup.html';</script>");
+                exit;
             }
             $inputId = $_POST['id'];
 
             if(empty($_POST['pw'])) {
-              echo "<script>alert('비밀번호를 입력해주세요.');</script>";
-              echo("<script>location.href='./signup.html';</script>");
-              exit;
+                echo "<script>alert('비밀번호를 입력해주세요.');</script>";
+                echo("<script>location.href='./signup.html';</script>");
+                exit;
             }
             $inputPw = $_POST['pw'];
 
             if(empty($_POST['email'])) {
-              echo "<script>alert('이메일을 입력해주세요.');</script>";
-              echo("<script>location.href='./signup.html';</script>");
-              exit;
+                echo "<script>alert('이메일을 입력해주세요.');</script>";
+                echo("<script>location.href='./signup.html';</script>");
+                exit;
             }
             $inputEmail = $_POST['email'];
 
-            if(mysqli_stmt_execute($stmt)){
-                echo "<script>alert('회원가입성공');</script>";
+            mysqli_stmt_execute($stmt);
+            echo "<script>alert('회원가입성공');</script>";
+            echo("<script>location.href='./signin.html';</script>"); 
+            
+            /* if-else error handle */
+            // if($stmt = mysqli_prepare($mysqli, $sql)){
+            //     mysqli_stmt_bind_param($stmt, "ssss", $inputName, $inputId, $inputPw, $inputEmail);
+            //     if(empty($_POST['name'])) {
+            //     echo "<script>alert('이름을 입력해주세요.');</script>";
+            //     echo("<script>location.href='./signup.html';</script>");
+            //     exit;
+            //     }
+            //     $inputName = $_POST['name'];
 
-                //페이지 이동
-                echo("<script>location.href='./signin.html';</script>"); 
-            } else { 
-                echo("<div>ERROR: Could not execute query: $sql.".mysqli_error($mysqli));
-            }
-        } else {
-            echo "ERROR: Could not prepare query: $sql.".mysqli_error($mysqli);
+            //     if(empty($_POST['id'])) {
+            //     echo "<script>alert('아이디를 입력해주세요.');</script>";
+            //     echo("<script>location.href='./signup.html';</script>");
+            //     exit;
+            //     }
+            //     $inputId = $_POST['id'];
+
+            //     if(empty($_POST['pw'])) {
+            //     echo "<script>alert('비밀번호를 입력해주세요.');</script>";
+            //     echo("<script>location.href='./signup.html';</script>");
+            //     exit;
+            //     }
+            //     $inputPw = $_POST['pw'];
+
+            //     if(empty($_POST['email'])) {
+            //     echo "<script>alert('이메일을 입력해주세요.');</script>";
+            //     echo("<script>location.href='./signup.html';</script>");
+            //     exit;
+            //     }
+            //     $inputEmail = $_POST['email'];
+
+            //     if(mysqli_stmt_execute($stmt)){
+            //         echo "<script>alert('회원가입성공');</script>";
+
+            //         //페이지 이동
+            //         echo("<script>location.href='./signin.html';</script>"); 
+            //     } else { 
+            //         echo("<div>ERROR: Could not execute query: $sql.".mysqli_error($mysqli));
+            //     }
+            // } else {
+            //     echo "ERROR: Could not prepare query: $sql.".mysqli_error($mysqli);
+            // }
+            $mysqli->autocommit(true);
+        } catch (mysqli_sql_exception $exception) {
+            $mysqli->rollback();
+            throw $exception;
         }
     }
     mysqli_stmt_close($stmt);

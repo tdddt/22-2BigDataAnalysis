@@ -35,7 +35,7 @@ create table userinfo (
     Uweight int,
     Ulocation varchar(20),
     primary key(userId),
-    foreign key(userId) references userlog(userId)
+    foreign key(userId) references userlog(userId) ON DELETE CASCADE
 );
 
 CREATE INDEX userId ON userinfo(userId);
@@ -57,7 +57,7 @@ create table doctorinfo (
     field varchar(50),
     site varchar(9999),
     primary key(doctor_ID),
-    foreign key(hospital) references hospitalinfo(hospital_name)
+    foreign key(hospital) references hospitalinfo(hospital_name) ON DELETE CASCADE
 );
 
 create table hospitalComment (
@@ -66,8 +66,8 @@ create table hospitalComment (
     hospital_name varchar(20),
     comment varchar(100),
     primary key(commentId),
-    foreign key(userId) references userlog(userId),
-    foreign key(hospital_name) references hospitalinfo(hospital_name)
+    foreign key(userId) references userlog(userId) ON DELETE CASCADE,
+    foreign key(hospital_name) references hospitalinfo(hospital_name) ON DELETE CASCADE
 );
 
 CREATE INDEX hospital_name ON hospitalComment(hospital_name);
@@ -78,8 +78,8 @@ create table doctorComment(
     doctor_ID int not null,
     comment varchar(100),
     primary key(commentId),
-    foreign key(userId) references userlog(userId),
-    foreign key(doctor_ID) references doctorinfo(doctor_ID)
+    foreign key(userId) references userlog(userId) ON DELETE CASCADE,
+    foreign key(doctor_ID) references doctorinfo(doctor_ID) ON DELETE CASCADE
 );
 
 CREATE INDEX doctor_ID ON doctorComment(doctor_ID);
@@ -105,8 +105,8 @@ CREATE TABLE checkResult(
   암종류 VARCHAR(30),
   체크정보 TEXT,
   count INT(11),
-  primary key(USER_ID),
-  foreign key(USER_ID) references userlog(userId)
+  /*primary key(USER_ID),*/
+  foreign key(USER_ID) references userlog(userId) ON DELETE CASCADE
 );
 
 /*위암 https://post.naver.com/viewer/postView.nhn?volumeNo=28534977&memberNo=10551594*/
@@ -153,8 +153,8 @@ create table cancerComment(
     cancertype varchar(30) not null,
     comment varchar(100),
     primary key(commentId),
-    foreign key(userId) references userlog(userId),
-    foreign key(cancertype) references cancerinfo(cancertype)
+    foreign key(userId) references userlog(userId) ON DELETE CASCADE,
+    foreign key(cancertype) references cancerinfo(cancertype) ON DELETE CASCADE
 );
 
 CREATE INDEX cancertype ON cancerComment(cancertype);

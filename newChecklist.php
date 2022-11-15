@@ -3,28 +3,23 @@
 $conn= mysqli_connect("localhost","team09","team09","team09");
 
 $var=$_GET['name'];
-$user_id=$_GET['id'];
+session_start();
+$user_id=$_SESSION['userId'];
 echo $user_id;
 ?>
 <html>
 <head>
   <meta charset="utf-8">
   <title><?=$var?>체크리스트</title>
-  <style>
-  .button{
-    background-color: #00462A;border: none;color: white;
-    text-align: center;text-decoration: none; font-size: 12px;
-    display: inline-block;cursor: pointer; padding: 15px 15px;
-  }
-  .button:hover{
-   background-color: #779c74;
- }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body><center><br>
-<h2><?=$var?>체크리스트</h2>
+<h1><?=$var?>체크리스트</h1>
 <p>해당되는 항목을 선택해주세요</p>
 <form method="post" action="usrChecklist.php">
+
+
+<div align="left" class="checklistBox">
 
 <?php
 $sql = 'SELECT * FROM '.$var.'체크리스트';
@@ -42,12 +37,13 @@ while($row=mysqli_fetch_array($result)){
 }
 mysqli_close($conn);
 ?>
-<input type="hidden" name="name" value="<?=$var?>">
-<?php echo '<input type="hidden" name="id" value="'.$user_id.'">';?>
-<p><input type="submit" class="button" value="결과 저장하기"></p>
-</form>
-<a href="checklist_index.html" class="button">체크리스트 홈으로 돌아가기</a>
 
+
+</div>
+<input type="hidden" name="name" value="<?=$var?>">
+<div><p><input type="submit" class="button_long" value="결과 저장하기"></p></div>
+</form>
+<div><a href="checklist_index.html" class="buttonReverse">체크리스트 홈으로 돌아가기</a></div>
 </center>
 </body>
 </html>
