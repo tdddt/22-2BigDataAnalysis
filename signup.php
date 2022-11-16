@@ -42,25 +42,25 @@
         exit;
     }
     else { 
-        //이미 존재하는 아이디라면 새로 생성할 수 없음.
-        $check = "SELECT id from userlog";
-        $res = mysqli_query($mysqli,$check);
-        if ($res) {
-            while ($newArray=mysqli_fetch_array($res, MYSQLI_ASSOC)) {
-                if($newArray['id']===$_POST['id']){
-                    echo "<script>alert('이미 존재하는 아이디입니다. 다른 아이디로 입력해주세요.');</script>";
-                    echo("<script>location.href='./signup.html';</script>");
-                    exit;  
-                }                
-            }
-        }
-        else {
-            printf("Could not retrieve records: %s\n", mysqli_error($mysqli));
-        }
-        
         //transaction
         $mysqli->autocommit(false); 
         try {
+            //이미 존재하는 아이디라면 새로 생성할 수 없음.
+            $check = "SELECT id from userlog";
+            $res = mysqli_query($mysqli,$check);
+            if ($res) {
+                while ($newArray=mysqli_fetch_array($res, MYSQLI_ASSOC)) {
+                    if($newArray['id']===$_POST['id']){
+                        echo "<script>alert('이미 존재하는 아이디입니다. 다른 아이디로 입력해주세요.');</script>";
+                        echo("<script>location.href='./signup.html';</script>");
+                        exit;  
+                    }                
+                }
+            }
+            else {
+                printf("Could not retrieve records: %s\n", mysqli_error($mysqli));
+            }
+                
             $sql = "INSERT into userlog(userName,id,pw,email) values (?,?,?,?);";
             $stmt = mysqli_prepare($mysqli, $sql);
             mysqli_stmt_bind_param($stmt, "ssss", $inputName, $inputId, $inputPw, $inputEmail);
