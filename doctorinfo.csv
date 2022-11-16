@@ -1,72 +1,72 @@
 1,심기남,이대서울병원,소화기내과,위암,https://seoul.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1002308&dept_cd=CCIMG
 2,김광호,이대서울병원,외과,대장암,https://seoul.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1001228&dept_cd=CCGS
-3,김종규,이대서울병원,외과,"유방암, 갑상선암",https://seoul.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1007058&dept_cd=CCGS
-4,김관창,이대서울병원,흉부외과,"폐암, 식도암",https://seoul.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1003504&dept_cd=CCS
+3,김종규,이대서울병원,외과,유방암/갑상선암,https://seoul.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1007058&dept_cd=CCGS
+4,김관창,이대서울병원,흉부외과,폐암/식도암,https://seoul.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1003504&dept_cd=CCS
 5,윤원재,이대서울병원,소화기내과,담관암,https://seoul.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1004093&dept_cd=DIMG
 6,문창모,이대목동병원,소화기내과,대장암,https://mokdong.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1004435&dept_cd=IMG
 7,홍근,이대목동병원,외과,간암,https://mokdong.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1003806&dept_cd=OTGS
-8,이동현,이대목동병원,비뇨의학과,"전립선암, 방광암",https://mokdong.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1001822&dept_cd=UR
-9,이선영,이대목동병원,소화기내과,"담낭암, 담도암, 췌장암",https://mokdong.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1001518&dept_cd=IMG
+8,이동현,이대목동병원,비뇨의학과,전립선암/방광암,https://mokdong.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1001822&dept_cd=UR
+9,이선영,이대목동병원,소화기내과,담낭암/담도암/췌장암,https://mokdong.eumc.ac.kr/doctor/basicInfo.do?dr_sid=1001518&dept_cd=IMG
 10,김효정,고려대학교구로병원,소화기내과,담도암,http://guro.kumc.or.kr/popup/popDoctorInfo.do?DR_NO=6403
-11,김승한,고려대학교구로병원,소화기내과,"위암, 식도암",http://guro.kumc.or.kr/popup/popDoctorInfo.do?DR_NO=7660
-12,주문경,고려대학교구로병원,소화기내과,"위암, 소화기암",http://guro.kumc.or.kr/popup/popDoctorInfo.do?DR_NO=6402
-13,이영구,한림대학교강남성심병원,비뇨의학과,"전립선암, 방광암, 신장암",https://kangnam.hallym.or.kr/ptm207.asp?Doctor_Id=303
-14,신호승,한림대학교강남성심병원,흉부외과,"폐암, 식도암",https://kangnam.hallym.or.kr/ptm207.asp?Doctor_Id=1161
-15,김형수,한림대학교강남성심병원,혈액종양내과,"폐암, 유방암, 두경부암, 혈액암",https://kangnam.hallym.or.kr/ptm207.asp?Doctor_Id=815
-16,유상준,서울특별시보라매병원,비뇨의학과,"전립선암, 신장암, 방광암, 고환암",https://www.brmh.org/custom/popup/layer_doctor_view.do?dt_no=332&medi_code=003008000%7C001010000
-17,김광우,서울특별시보라매병원,소화기내과,"위암, 대장직장암",https://www.brmh.org/custom/popup/layer_doctor_view.do?dt_no=406&medi_code=001015000%7C001015000
+11,김승한,고려대학교구로병원,소화기내과,위암/식도암,http://guro.kumc.or.kr/popup/popDoctorInfo.do?DR_NO=7660
+12,주문경,고려대학교구로병원,소화기내과,위암/소화기암,http://guro.kumc.or.kr/popup/popDoctorInfo.do?DR_NO=6402
+13,이영구,한림대학교강남성심병원,비뇨의학과,전립선암/방광암/신장암,https://kangnam.hallym.or.kr/ptm207.asp?Doctor_Id=303
+14,신호승,한림대학교강남성심병원,흉부외과,폐암/식도암,https://kangnam.hallym.or.kr/ptm207.asp?Doctor_Id=1161
+15,김형수,한림대학교강남성심병원,혈액종양내과,폐암/유방암/두경부암/혈액암,https://kangnam.hallym.or.kr/ptm207.asp?Doctor_Id=815
+16,유상준,서울특별시보라매병원,비뇨의학과,전립선암/신장암/방광암/고환암,https://www.brmh.org/custom/popup/layer_doctor_view.do?dt_no=332&medi_code=003008000%7C001010000
+17,김광우,서울특별시보라매병원,소화기내과,위암/대장직장암,https://www.brmh.org/custom/popup/layer_doctor_view.do?dt_no=406&medi_code=001015000%7C001015000
 18,김원,서울특별시보라매병원,소화기내과,간암,https://www.brmh.org/custom/popup/layer_doctor_view.do?dt_no=222&medi_code=001015000%7C001015000
 19,구강모,중앙대학교병원,호흡기알레르기내과,폐암,https://ch.caumc.or.kr/home/medical/profView.do?deptNo=215&profNo=700&empNo=01360
-20,김재규,중앙대학교병원,소화기내과,"위암, 식도암",https://ch.caumc.or.kr/home/medical/profView.do?deptNo=219&profNo=895&empNo=00679
+20,김재규,중앙대학교병원,소화기내과,위암/식도암,https://ch.caumc.or.kr/home/medical/profView.do?deptNo=219&profNo=895&empNo=00679
 21,김재열,중앙대학교병원,호흡기알레르기내과,폐암,https://ch.caumc.or.kr/home/medical/profView.do?deptNo=215&profNo=702&empNo=00699
 22,박우찬,가톨릭대학교서울성모병원,유방외과,유방암,https://www.cmcseoul.or.kr/page/doctor/131/D0001059
-23,손석현,가톨릭대학교서울성모병원,방사선종양학과,"폐암, 식도암, 간암, 피부암",https://www.cmcseoul.or.kr/page/doctor/44/D0002018
-24,최규혜,가톨릭대학교서울성모병원,방사선종양학과,"대장직장암, 부인암",https://www.cmcseoul.or.kr/page/doctor/44/D0001601
+23,손석현,가톨릭대학교서울성모병원,방사선종양학과,폐암/식도암/간암/피부암,https://www.cmcseoul.or.kr/page/doctor/44/D0002018
+24,최규혜,가톨릭대학교서울성모병원,방사선종양학과,대장직장암/부인암,https://www.cmcseoul.or.kr/page/doctor/44/D0001601
 25,정회훈,삼성서울병원,소화기내과,췌담도암,http://www.samsunghospital.com/home/reservation/common/doctorProfile.do?DR_NO=2691
 26,이현무,삼성서울병원,비뇨의학과,전립선암,http://www.samsunghospital.com/home/reservation/common/doctorProfile.do?DR_NO=521
-27,강민용,삼성서울병원,비뇨의학과,"신장암, 전립선암",http://www.samsunghospital.com/home/reservation/common/doctorProfile.do?DR_NO=2225
+27,강민용,삼성서울병원,비뇨의학과,신장암/전립선암,http://www.samsunghospital.com/home/reservation/common/doctorProfile.do?DR_NO=2225
 28,배숭준,강남세브란스병원,유방외과,유방암,https://gs.severance.healthcare/gs/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApM%2BkWi1E6Fcd2VaDNDRlIMY58%2F8qPARiSWaX1SJRPYxg%3D&deptSeq=832
 29,유성환,강남세브란스병원,소화기내과,간암,https://gs.severance.healthcare/gs/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNMUGi10mFPpuVaDNDRBLMeJ%2BgfR7NhKaDna7BRiThq0%3D&deptSeq=557
-30,김지현,강남세브란스병원,소화기내과,"위암, 식도암, 대장암",https://gs.severance.healthcare/gs/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmi34XFPtyVa%2FNDRhJPM2CwRea9O13l%2BhV7JaoS8A%3D&deptSeq=557
+30,김지현,강남세브란스병원,소화기내과,위암/식도암/대장암,https://gs.severance.healthcare/gs/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmi34XFPtyVa%2FNDRhJPM2CwRea9O13l%2BhV7JaoS8A%3D&deptSeq=557
 31,강우형,서울아산병원,간이식 간담도외과,간암,https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=MFhhL3N0RGkyYlU5dlN3eXNlTkxwdz09&deptTabIndex=5&searchHpCd=D188&searchKeyword=
 32,고범석,서울아산병원,유방외과,유방암,https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=TUorYVJ6OFVLTUxjQVJVTngycTBxZz09&deptTabIndex=5&searchHpCd=D177&searchKeyword=
 33,공충식,서울아산병원,위장관외과,위암,https://www.amc.seoul.kr/asan/staff/base/staffBaseInfoDetail.do?drEmpId=RWIzNmZYd1RtYVJWUDAzYjlsU2JJZz09&deptTabIndex=5&searchHpCd=D175&searchKeyword=
-34,김정아,강동경희대학교의대병원,혈액종양내과,"폐암, 유방암, 두경부암, 비뇨기암, 갑상선암",https://www.khnmc.or.kr/kr/treatment/doctor/3505/profile.do
-35,박윤영,강동경희대학교의대병원,소화기외과,"대장암, 직장암",https://www.khnmc.or.kr/kr/treatment/doctor/4865/profile.do
+34,김정아,강동경희대학교의대병원,혈액종양내과,폐암/유방암/두경부암/비뇨기암/갑상선암,https://www.khnmc.or.kr/kr/treatment/doctor/3505/profile.do
+35,박윤영,강동경희대학교의대병원,소화기외과,대장암/직장암,https://www.khnmc.or.kr/kr/treatment/doctor/4865/profile.do
 36,신현필,강동경희대학교의대병원,소화기내과,간암,https://www.khnmc.or.kr/kr/treatment/doctor/42/profile.do
 37,신운건,강동성심병원,소화기내과,위암,https://www.kdh.or.kr/sub201.php?dept=111110
 38,김형수,강동성심병원,소화기내과,간암,https://www.kdh.or.kr/sub201.php?dept=111110
-39,서승인,강동성심병원,소화기내과,"위암, 대장암",https://www.kdh.or.kr/sub201.php?dept=111110
-40,주종우,순천향대학교부속서울병원,외과,"담낭암, 담도암, 췌장암, 간암, 간전이암",https://www.schmc.ac.kr/seoul/doctr/home.do?key=1605&doctrNo=2542
-41,유대광,순천향대학교부속서울병원,외과,"췌장암, 담도암, 담낭암, 간암, 전이성간암",https://www.schmc.ac.kr/seoul/doctr/home.do?key=1605&doctrNo=2543
-42,이민혁,순천향대학교부속서울병원,외과,"유방암, 갑상선암",https://www.schmc.ac.kr/seoul/doctr/home.do?key=1605&doctrNo=1150
-43,박성열,한양대학교병원,비뇨의학과,"전립선암, 신장암, 방광암",https://seoul.hyumc.com/seoul/mediteam/mditeam.do?action=detail&searchCondition1=seqMediteam&searchCommonSeq=10&searchCommonCd1=2082131&searchCommonCd2=111290&searchKeyword=%EB%B9%84%EB%87%A8%EC%9D%98%ED%95%99%EA%B3%BC
-44,윤영은,한양대학교병원,비뇨의학과,"신장암, 방광암",https://seoul.hyumc.com/seoul/mediteam/mditeam.do?action=detail&searchCondition1=seqMediteam&searchCommonSeq=10&searchCommonCd1=2170067&searchCommonCd2=111290&searchKeyword=%EB%B9%84%EB%87%A8%EC%9D%98%ED%95%99%EA%B3%BC
-45,최호순,한양대학교병원,소화기내과,"간암, 췌장암, 담낭암",https://seoul.hyumc.com/seoul/mediteam/mditeam.do?action=detail&searchCondition1=seqMediteam&searchCommonSeq=16&searchCommonCd1=1954757&searchCommonCd2=111110&searchKeyword=%EC%86%8C%ED%99%94%EA%B8%B0%EB%82%B4%EA%B3%BC
-46,유영범,건국대학교병원,외과,"유방암, 갑상선암",https://www.kuh.ac.kr/doctor/basicInfo.do?dr_sid=20010035&dept_cd=100010
-47,정현우,건국대학교병원,핵의학과,"갑상선암, 유방암, 혈액암",https://www.kuh.ac.kr/doctor/basicInfo.do?dr_sid=20080193&dept_cd=100010
+39,서승인,강동성심병원,소화기내과,위암/대장암,https://www.kdh.or.kr/sub201.php?dept=111110
+40,주종우,순천향대학교부속서울병원,외과,담낭암/담도암/췌장암/간암/간전이암,https://www.schmc.ac.kr/seoul/doctr/home.do?key=1605&doctrNo=2542
+41,유대광,순천향대학교부속서울병원,외과,췌장암/담도암/담낭암/간암/전이성간암,https://www.schmc.ac.kr/seoul/doctr/home.do?key=1605&doctrNo=2543
+42,이민혁,순천향대학교부속서울병원,외과,유방암/갑상선암,https://www.schmc.ac.kr/seoul/doctr/home.do?key=1605&doctrNo=1150
+43,박성열,한양대학교병원,비뇨의학과,전립선암/신장암/방광암,https://seoul.hyumc.com/seoul/mediteam/mditeam.do?action=detail&searchCondition1=seqMediteam&searchCommonSeq=10&searchCommonCd1=2082131&searchCommonCd2=111290&searchKeyword=%EB%B9%84%EB%87%A8%EC%9D%98%ED%95%99%EA%B3%BC
+44,윤영은,한양대학교병원,비뇨의학과,신장암/방광암,https://seoul.hyumc.com/seoul/mediteam/mditeam.do?action=detail&searchCondition1=seqMediteam&searchCommonSeq=10&searchCommonCd1=2170067&searchCommonCd2=111290&searchKeyword=%EB%B9%84%EB%87%A8%EC%9D%98%ED%95%99%EA%B3%BC
+45,최호순,한양대학교병원,소화기내과,간암/췌장암/담낭암,https://seoul.hyumc.com/seoul/mediteam/mditeam.do?action=detail&searchCondition1=seqMediteam&searchCommonSeq=16&searchCommonCd1=1954757&searchCommonCd2=111110&searchKeyword=%EC%86%8C%ED%99%94%EA%B8%B0%EB%82%B4%EA%B3%BC
+46,유영범,건국대학교병원,외과,유방암/갑상선암,https://www.kuh.ac.kr/doctor/basicInfo.do?dr_sid=20010035&dept_cd=100010
+47,정현우,건국대학교병원,핵의학과,갑상선암/유방암/혈액암,https://www.kuh.ac.kr/doctor/basicInfo.do?dr_sid=20080193&dept_cd=100010
 48,방호윤,건국대학교병원,외과,위암,https://www.kuh.ac.kr/doctor/basicInfo.do?dr_sid=20090445&dept_cd=100018
-49,라선영,연세암병원,혈액종양내과,"위암, 복막암, 신장암, 방광암",https://sev.severance.healthcare/cancer/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApM8Qai103Fft3Va7PDRNJPTL7nM2U0gpM%2BchZS9VUa%2BE%3D&deptSeq=775
-50,장원식,연세암병원,비뇨기과,"방광암, 전립선암, 신장암",https://sev.severance.healthcare/cancer/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNMcDi0IHFehrVaDJDRdLMuVadRvkfqqaGjgilM4I5lA%3D&deptSeq=772
-51,김경환,연세암병원,방사선종양학과,"폐암, 두경부암, 식도암, 피부암, 뇌전이암",https://sev.severance.healthcare/cancer/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmjWsqFPpuVaDPDRdINLIeFAc%2FSgV7t3RiJqjmTsk%3D&deptSeq=770
-52,서경석,서울대학교병원,간담췌외과,"간암, 간내 담도암, 전이성간암, 간세포암",https://www.snuh.org/blog/00787/philosophy.do
+49,라선영,연세암병원,혈액종양내과,위암/복막암/신장암/방광암,https://sev.severance.healthcare/cancer/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApM8Qai103Fft3Va7PDRNJPTL7nM2U0gpM%2BchZS9VUa%2BE%3D&deptSeq=775
+50,장원식,연세암병원,비뇨기과,방광암/전립선암/신장암,https://sev.severance.healthcare/cancer/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApNMcDi0IHFehrVaDJDRdLMuVadRvkfqqaGjgilM4I5lA%3D&deptSeq=772
+51,김경환,연세암병원,방사선종양학과,폐암/두경부암/식도암/피부암/뇌전이암,https://sev.severance.healthcare/cancer/doctor/doctor-view.do?empNo=eXVoczIwMjBAKUApMuAmjWsqFPpuVaDPDRdINLIeFAc%2FSgV7t3RiJqjmTsk%3D&deptSeq=770
+52,서경석,서울대학교병원,간담췌외과,간암/간내 담도암/전이성간암/간세포암,https://www.snuh.org/blog/00787/philosophy.do
 53,곽낙원,서울대학교병원,호흡기내과,폐암,https://www.snuh.org/blog/65947/career.do?dr_cd=65947
-54,임종필,서울대학교병원,소화기내과,"대장암, 직장암",https://www.snuh.org/blog/65485/philosophy.do
-55,남희림,강북삼성병원,방사선종양학과,"유방암, 두경부암, 폐암, 식도암, 종격동암",https://www.kbsmc.co.kr/main/jsp/about/medicalStaffDetail.jsp
-56,정재용,강북삼성병원,비뇨의학과,"방광암, 신장암, 전립선암",https://www.kbsmc.co.kr/main/jsp/about/medicalStaffDetail.jsp
-57,주관중,강북삼성병원,비뇨의학과,"신장암, 전립선암, 방광암",https://www.kbsmc.co.kr/main/jsp/about/medicalStaffDetail.jsp
+54,임종필,서울대학교병원,소화기내과,대장암/직장암,https://www.snuh.org/blog/65485/philosophy.do
+55,남희림,강북삼성병원,방사선종양학과,유방암/두경부암/폐암/식도암/종격동암,https://www.kbsmc.co.kr/main/jsp/about/medicalStaffDetail.jsp
+56,정재용,강북삼성병원,비뇨의학과,방광암/신장암/전립선암,https://www.kbsmc.co.kr/main/jsp/about/medicalStaffDetail.jsp
+57,주관중,강북삼성병원,비뇨의학과,신장암/전립선암/방광암,https://www.kbsmc.co.kr/main/jsp/about/medicalStaffDetail.jsp
 58,권혁춘,국립중앙의료원,소화기내과,간암,https://www.nmc.or.kr/nmc/med/doctor/docView.do?dtTypeCd=A&dtCd=2010300000&dtCenterCd=2300100000&menuNo=200073&rdDccode=210035
 59,조준성,국립중앙의료원,호흡기내과,폐암,https://www.nmc.or.kr/nmc/med/doctor/docView.do?dtTypeCd=A&dtCd=2010600000&dtCenterCd=2300700000&menuNo=200154&rdDccode=210050
 60,정재윤,국립중앙의료원,소화기내과,간암,https://www.nmc.or.kr/nmc/med/doctor/docView.do?dtTypeCd=A&dtCd=2010300000&dtCenterCd=2300100000&menuNo=200073&rdDccode=719240
 61,천준,고려대학교안암병원,비뇨의학과,전립선암,http://anam.kumc.or.kr/popup/popDoctorInfo.do?DR_NO=253
-62,김철용,고려대학교안암병원,방사선종양학과,"소화기암, 두경부암, 유방암",http://anam.kumc.or.kr/popup/popDoctorInfo.do?DR_NO=38
-63,박영제,고려대학교안암병원,방사선종양학과,"비뇨기암, 부인암, 폐암",http://anam.kumc.or.kr/popup/popDoctorInfo.do?DR_NO=2295
-64,최동욱,노원을지대학교병원,간담췌외과,"췌장암, 담도암, 담낭암, 팽대부암",http://uemc.ac.kr/clinic/clinic_doc_view01_01.jsp?dept=ABEGAA&doct=20201761
+62,김철용,고려대학교안암병원,방사선종양학과,소화기암/두경부암/유방암,http://anam.kumc.or.kr/popup/popDoctorInfo.do?DR_NO=38
+63,박영제,고려대학교안암병원,방사선종양학과,비뇨기암/부인암/폐암,http://anam.kumc.or.kr/popup/popDoctorInfo.do?DR_NO=2295
+64,최동욱,노원을지대학교병원,간담췌외과,췌장암/담도암/담낭암/팽대부암,http://uemc.ac.kr/clinic/clinic_doc_view01_01.jsp?dept=ABEGAA&doct=20201761
 65,김병식,노원을지대학교병원,위장관외과,위암,http://uemc.ac.kr/clinic/clinic_doc_view01_01.jsp?dept=ABEHAA&doct=20210648
 66,김희성,노원을지대학교병원,위장관외과,위암,http://uemc.ac.kr/clinic/clinic_doc_view01_01.jsp?dept=ABEHAA&doct=20211646
-67,신영주,인제대학교상계백병원,방사선종양학과,"유방암, 소화기암",https://www.paik.ac.kr/sanggye/user/doctor/view.do?doctorId=432
-68,강진규,인제대학교상계백병원,방사선종양학과,"두경부암, 뇌암, 폐암, 혈액암, 비뇨기암, 부인암",https://www.paik.ac.kr/sanggye/user/doctor/view.do?doctorId=1563
-69,최정민,인제대학교상계백병원,소화기내과,"위암, 대장암",https://www.paik.ac.kr/sanggye/user/doctor/view.do?doctorId=410
-70,김유철,한국원자력의학원원자력병원,소화기내과,"위암, 식도암, 대장암",https://www.kcch.re.kr/reserve/doctorView.do?DR_NO=15
-71,김연주,한국원자력의학원원자력병원,소화기내과,"식도암, 위암, 대장암",https://www.kcch.re.kr/reserve/doctorView.do?DR_NO=14
-72,박종욱,한국원자력의학원원자력병원,비뇨의학과,"전립선암, 신장암, 방광암, 고환암, 요관암",https://www.kcch.re.kr/reserve/doctorView.do?DR_NO=22
+67,신영주,인제대학교상계백병원,방사선종양학과,유방암/소화기암,https://www.paik.ac.kr/sanggye/user/doctor/view.do?doctorId=432
+68,강진규,인제대학교상계백병원,방사선종양학과,두경부암/뇌암/폐암/혈액암/비뇨기암/부인암,https://www.paik.ac.kr/sanggye/user/doctor/view.do?doctorId=1563
+69,최정민,인제대학교상계백병원,소화기내과,위암/대장암,https://www.paik.ac.kr/sanggye/user/doctor/view.do?doctorId=410
+70,김유철,한국원자력의학원원자력병원,소화기내과,위암/식도암/대장암,https://www.kcch.re.kr/reserve/doctorView.do?DR_NO=15
+71,김연주,한국원자력의학원원자력병원,소화기내과,식도암/위암/대장암,https://www.kcch.re.kr/reserve/doctorView.do?DR_NO=14
+72,박종욱,한국원자력의학원원자력병원,비뇨의학과,전립선암/신장암/방광암/고환암/요관암,https://www.kcch.re.kr/reserve/doctorView.do?DR_NO=22

@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1 style="text-align: center;">암 정보 확인</h1>
-  <div style="text-align: center;" ><a href="cancerinfofind.html" class="buttonReverse" style="text-align: center;">뒤로가기</a></div>
+  <div style="text-align: center;" ><a href="cancerinfo.html" class="buttonReverse" style="text-align: center;">뒤로가기</a></div>
   <div class="v1_5">
   <div class="v2_26"></div>
   <div class="v2_23"></div>
@@ -41,14 +41,18 @@ if(mysqli_connect_errno())
 else
 {
     $name = $_POST['cancername'];
-    $sql ="select * from cancerinfo where cancer_name='$name'";
+
+    session_start();
+    $_SESSION['cancername'] = isset($row['cancername']) ? $row['cancername'] : 0;
+
+    $sql ="select * from cancerinfo where cancertype='$name'";
 
     $res = mysqli_query($mysqli, $sql);
 
     $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
-    echo '<span class = "v4_1">'.$row["cancer_name"].'</span>';
-    echo '<span class = "v4_2">'.$row["definition"].'</span>';
+    echo '<span class = "v4_1">'.$row["cancertype"].'</span>';
+    echo '<span class = "v4_2">'.$row["Cdefinition"].'</span>';
     echo '<span class = "v4_3">'.$row["cause"].'</span>';
     echo '<span class = "v4_4">'.$row["symptom"].'</span>';
     echo '<span class = "v4_5">'.$row["diagnosis"].'</span>';
@@ -57,6 +61,37 @@ else
     echo '<span class = "v4_8">'.$row["complication"].'</span>';
     echo '<span class = "v4_9">'.$row["prevention"].'</span>';
     echo '<span class = "v4_10">'.$row["department"].'</span>';
+}
+mysqli_free_result($res);
+mysqli_close($mysqli);
+?>
+
+<form id = "replyapplyid" action = "cancerreplyapply.php" method = "post" target = "reply">
+  <fieldset style = "margin-top: 1300px; margin-left: 77px; margin-right: 77px">
+    <legend>댓글</legend>
+    <textarea type = "text" name = "replytextarea" style = "width: 100%; height: 100px; border:1px solid; resize:none;"></textarea>
+    <input type = "submit" style = "float: right; border: 1px solid; background: none;" value = "댓글 등록">
+  </fieldset>
+</form>
+<iframe name = "reply" style = "display: none;"></iframe>
+<div id = "replys" style = "margin-top: 10px; margin-left: 77px; margin-right: 77px; border: 1px solid; height: 400px; overflow: auto;">
+<?php
+$mysqli = mysqli_connect("localhost","team09","team09","team09");
+if(mysqli_connect_errno())
+{
+    printf("Connect failed: %s\n",mysqli_connect_error());
+    exit();
+}
+else
+{
+    $name = @$_POST['cancername'];
+    $sql ="select * from cancerComment where cancertype='$name'";
+
+    $res = mysqli_query($mysqli, $sql);
+    while($row = mysqli_fetch_array($res, MYSQLI_ASSOC))
+    {
+      echo $row['commentId']." ".$row['userId']." ".$row['cancertype']."<br>".str_replace("<", "&lt", $row['comment'])."<br><br>";
+    }
 }
 mysqli_free_result($res);
 mysqli_close($mysqli);
@@ -71,7 +106,7 @@ body {
 }
 .v1_5 {
   width: 100%;
-  height: 1445px;
+  height: 1900px;
   background: rgba(255,255,255,1);
   opacity: 1;
   position: relative;
@@ -353,7 +388,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 705px;
+  top: 695px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;
@@ -365,7 +400,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 826px;
+  top: 806px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;
@@ -389,7 +424,7 @@ body {
   width: 1200px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 1082px;
+  top: 1057px;
   left: 230px;
   font-family: Inter;
   font-weight: Regular;

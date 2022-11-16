@@ -46,5 +46,28 @@ div {
   float:left;
   padding:30px;
   margin:10px;
+}
+.upperMenu {
+    color: #779c74;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    margin:10px;
+}
+.optionBox{
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
 
+th,td{
+  font-size: 14px;
+  border-bottom: 1px solid #444444;
+  padding: 10px;
+}
+a{
+  color: #00462A;
 }

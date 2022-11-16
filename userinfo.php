@@ -46,7 +46,7 @@
         exit();
     }
     else {
-        $sql="SELECT age,sex,drink,smoke,height,Uweight,Ulocation FROM userinfo WHERE userId=?";
+        $sql="SELECT age,sex,drink,smoke,height,Uweight,Ulocation FROM userinfo USE INDEX(userId) WHERE userId=?";
         if($stmt = mysqli_prepare($mysqli, $sql)){
             //bind preparedStatement
             $stmt->bind_param("s",$_SESSION['userId']);

@@ -4,7 +4,10 @@ $conn=mysqli_connect("localhost","team09","team09","team09");
 
 session_start();
 $user_id=$_SESSION['userId'];
-echo $user_id;
+$usernameSQL='SELECT * FROM userlog WHERE userId='.$user_id;
+$usernameRES=mysqli_query($conn,$usernameSQL);
+$userName=mysqli_fetch_array($usernameRES)['userName'];
+
 $sql = 'SELECT * FROM checkresult WHERE USER_ID='.$user_id;
 $result = mysqli_query($conn,$sql);
 ?>
@@ -15,7 +18,11 @@ $result = mysqli_query($conn,$sql);
   <title>저장된 체크리스트</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body><center><br>
+<body>
+<p>
+<a href="mypage.html" class="upperMenu">Hi, <?=$userName?></a>
+<a href="main.html" class="upperMenu">메인으로 이동</a>
+</p><br><center>
 <h2>저장된 체크리스트</h2>
 
 <?php

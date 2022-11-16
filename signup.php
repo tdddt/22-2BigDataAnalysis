@@ -97,48 +97,6 @@
             echo "<script>alert('회원가입성공');</script>";
             echo("<script>location.href='./signin.html';</script>"); 
             
-            /* if-else error handle */
-            // if($stmt = mysqli_prepare($mysqli, $sql)){
-            //     mysqli_stmt_bind_param($stmt, "ssss", $inputName, $inputId, $inputPw, $inputEmail);
-            //     if(empty($_POST['name'])) {
-            //     echo "<script>alert('이름을 입력해주세요.');</script>";
-            //     echo("<script>location.href='./signup.html';</script>");
-            //     exit;
-            //     }
-            //     $inputName = $_POST['name'];
-
-            //     if(empty($_POST['id'])) {
-            //     echo "<script>alert('아이디를 입력해주세요.');</script>";
-            //     echo("<script>location.href='./signup.html';</script>");
-            //     exit;
-            //     }
-            //     $inputId = $_POST['id'];
-
-            //     if(empty($_POST['pw'])) {
-            //     echo "<script>alert('비밀번호를 입력해주세요.');</script>";
-            //     echo("<script>location.href='./signup.html';</script>");
-            //     exit;
-            //     }
-            //     $inputPw = $_POST['pw'];
-
-            //     if(empty($_POST['email'])) {
-            //     echo "<script>alert('이메일을 입력해주세요.');</script>";
-            //     echo("<script>location.href='./signup.html';</script>");
-            //     exit;
-            //     }
-            //     $inputEmail = $_POST['email'];
-
-            //     if(mysqli_stmt_execute($stmt)){
-            //         echo "<script>alert('회원가입성공');</script>";
-
-            //         //페이지 이동
-            //         echo("<script>location.href='./signin.html';</script>"); 
-            //     } else { 
-            //         echo("<div>ERROR: Could not execute query: $sql.".mysqli_error($mysqli));
-            //     }
-            // } else {
-            //     echo "ERROR: Could not prepare query: $sql.".mysqli_error($mysqli);
-            // }
             $mysqli->autocommit(true);
         } catch (mysqli_sql_exception $exception) {
             $mysqli->rollback();

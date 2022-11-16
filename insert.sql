@@ -104,12 +104,6 @@ insert into doctorComment values (1,13,4,"최고의 의료진이라고 생각합
     (22,7,67,"예약 안 하면 아예 진료가 불가능해요."),
     (23,2,71,"친절하신 것 같아요.");
 
-/*암발생 시기별 상대생존율 insert*/
-load data local infile 'C:\\xampp\\htdocs\\team09\\surviveAll.csv' into table surviveAll fields terminated by ',' lines terminated by '\n';
-
-/*연령별 암 발생자수 insert*/
-load data local infile 'C:\\xampp\\htdocs\\team09\\occurnumAll.csv' into table occurnumAll fields terminated by ',' lines terminated by '\n';
-
 INSERT INTO 위암체크리스트(id,question)
 VALUES(1,'속쓰림이 있다.'),
 (2,'급격한 체중감소가 있다.'),

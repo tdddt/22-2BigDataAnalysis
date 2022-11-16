@@ -84,21 +84,6 @@ create table doctorComment(
 
 CREATE INDEX doctor_ID ON doctorComment(doctor_ID);
 
-create table surviveAll(
-    cancertype varchar(20) not null,
-    sex varchar(20),
-    occuryear text,
-    patientnum int(10),
-    survive double(5, 2)
-);
-
-create table occurnumAll(
-    cancertype varchar(20) not null,
-    sex varchar(20),
-    age text,
-    patientnum int(10)
-);
-
 /*유저 체크 결과 들어감*/
 CREATE TABLE checkResult(
   USER_ID INT(11) NOT NULL,

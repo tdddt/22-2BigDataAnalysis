@@ -4,7 +4,9 @@ $conn= mysqli_connect("localhost","team09","team09","team09");
 $var=$_POST['name'];
 session_start();
 $user_id=$_SESSION['userId'];
-echo $user_id;
+$usernameSQL='SELECT * FROM userlog WHERE userId='.$user_id;
+$usernameRES=mysqli_query($conn,$usernameSQL);
+$userName=mysqli_fetch_array($usernameRES)['userName'];
 ?>
 <html>
 <head>
@@ -12,7 +14,12 @@ echo $user_id;
   <title><?=$var?>체크리스트 - 결과</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body><center><br>
+<body>
+  <p>
+  <a href="mypage.html" class="upperMenu">Hi, <?=$userName?></a>
+  <a href="main.html" class="upperMenu">메인으로 이동</a>
+  </p><br>
+  <center>
   <h2><?=$var?>체크리스트 결과</h2>
 <?php
 if(isset($_POST['list'])){
