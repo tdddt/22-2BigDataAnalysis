@@ -50,6 +50,7 @@ while($row=mysqli_fetch_array($result)){
 
 <br><br><h2>다른 참여자들의 통계보기</h2>
 <div class="boxWrapper">
+
 <?php
 echo '<div align="left" class="statisticsBox"><h3>암종 별 체크리스트 참여자 수</h3>'; //GROUP BY, COUNT
 $sql = 'SELECT 암종류,count(*) AS numbers FROM checkresult GROUP BY 암종류';
@@ -65,8 +66,56 @@ while($row=mysqli_fetch_array($result)){
   echo '<p>'.$row['암종류'].': '.$row['numbers'].'개</p>';
 }
 echo '</div>';
+
+//complex grouping
+
+echo '<div align="left" class="statisticsBox"><h3>음주여부에 따른 체크 개수</h3>';
+$sql = 'SELECT 암종류, drink, avg(count) as avgnum
+FROM checkresult, userinfo
+WHERE checkresult.USER_ID=userinfo.userId
+GROUP BY 암종류,drink';
+
+$result = mysqli_query($conn,$sql);
+if($result==false){
+  printf(mysqli_error($conn));
+}
+while($row=mysqli_fetch_array($result)){
+  echo '<p>'.$row['암종류'];
+  if($row['drink']==0){
+      echo '(음주X): 평균 '.$row['avgnum'].'개';
+  }
+  else{
+    echo '(음주O): 평균 '.$row['avgnum'].'개</p>';
+  }
+}
+echo '</div>';
+
+echo '<div align="left" class="statisticsBox"><h3>흡연여부에 따른 체크 개수</h3>';
+$sql = 'SELECT 암종류, smoke, avg(count) as avgnum
+FROM checkresult
+JOIN userinfo
+WHERE checkresult.USER_ID=userinfo.userId
+GROUP BY 암종류,smoke';
+
+$result = mysqli_query($conn,$sql);
+if($result==false){
+  printf(mysqli_error($conn));
+}
+while($row=mysqli_fetch_array($result)){
+  echo '<p>'.$row['암종류'];
+  if($row['smoke']==0){
+      echo '(흡연X): 평균 '.$row['avgnum'].'개';
+  }
+  else{
+    echo '(흡연O): 평균 '.$row['avgnum'].'개</p>';
+  }
+}
+echo '</div>';
+
+
 mysqli_close($conn);
  ?>
+
 </div>
 
 </center>

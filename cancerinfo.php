@@ -43,7 +43,7 @@ else
     $name = $_POST['cancername'];
 
     session_start();
-    $_SESSION['cancername'] = isset($row['cancername']) ? $row['cancername'] : 0;
+    $_SESSION['cancername'] = $_POST['cancername'];
 
     $sql ="select * from cancerinfo where cancertype='$name'";
 
@@ -66,15 +66,17 @@ mysqli_free_result($res);
 mysqli_close($mysqli);
 ?>
 
-<form id = "replyapplyid" action = "cancerreplyapply.php" method = "post" target = "reply">
+<form action = "cancercommentadd.php" method = "post">
   <fieldset style = "margin-top: 1300px; margin-left: 77px; margin-right: 77px">
     <legend>댓글</legend>
-    <textarea type = "text" name = "replytextarea" style = "width: 100%; height: 100px; border:1px solid; resize:none;"></textarea>
-    <input type = "submit" style = "float: right; border: 1px solid; background: none;" value = "댓글 등록">
+    <textarea type = "text" name = "commenttextarea" style = "width: 100%; height: 100px; border:1px solid; resize:none;"></textarea>
+<?php
+echo "<form action ='cancercommentadd.php' method = 'post' style = 'text-align:center:'>
+      <button name ='cancername' value='".$_SESSION['cancername']."' type = 'submit'  class = 'button' style = 'float: right;'>댓글등록</form>";
+?>
   </fieldset>
 </form>
-<iframe name = "reply" style = "display: none;"></iframe>
-<div id = "replys" style = "margin-top: 10px; margin-left: 77px; margin-right: 77px; border: 1px solid; height: 400px; overflow: auto;">
+<div style = "margin-top: 10px; margin-left: 77px; margin-right: 77px; border: 1px solid; height: 400px; overflow: auto;">
 <?php
 $mysqli = mysqli_connect("localhost","team09","team09","team09");
 if(mysqli_connect_errno())
@@ -88,9 +90,20 @@ else
     $sql ="select * from cancerComment where cancertype='$name'";
 
     $res = mysqli_query($mysqli, $sql);
+
+    echo "<style>table {
+        margin:20px;
+    }
+    table, td, th {
+        border-collapse : collapse;
+        border : 0px ;
+    };
+    </style><table border=1 cellspacing=0 cellpading=0> <tr><td>댓글번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>회원번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>암 종류&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>내용&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>";
     while($row = mysqli_fetch_array($res, MYSQLI_ASSOC))
     {
-      echo $row['commentId']." ".$row['userId']." ".$row['cancertype']."<br>".str_replace("<", "&lt", $row['comment'])."<br><br>";
+      echo "<tr><td>".$row['commentId']."&nbsp;&nbsp;&nbsp;</td><td>".$row['userId']."&nbsp;&nbsp;&nbsp;</td><td>".$row['cancertype']."&nbsp;&nbsp;&nbsp;</td><td>".str_replace("<", "&lt", $row['comment'])."&nbsp;&nbsp;&nbsp;<br></td>
+            <td><form action ='cancercommentcheck.php' method = 'post' style = 'text-align:center;'>
+                <button name ='commentId' value='".$_SESSION['commentId']."' type = 'submit' class = 'button'>수정/삭제</form></td></tr>";
     }
 }
 mysqli_free_result($res);

@@ -1,4 +1,4 @@
-편집 -> promt...ㅋ큐ㅠㅠ
+
 <?php
     //권한있는지 확인
     session_start();
@@ -18,11 +18,16 @@
         //writeId
         $writeId = isset($row['userId']) ? $row['userId'] : false;
 
-        if($writeId===$SESSION['userId']){
-            echo "<form action="" method="post" style="text-align: center;">
-            후기: <input type="text" name="inputcomment" class="input">
-            <input class="button" type="submit" value="작성">
-            </form>";
+        if($writeId===$_SESSION['userId']){
+
+            $sql="update doctorcomment set comment=? WHERE commentId=?";
+            $stmt2 = mysqli_prepare($mysqli, $sql);
+
+            $stmt2->bind_param("si", $_POST['inputcomment'],$_SESSION['commentId']);
+            $stmt2->execute();
+            echo "<script>alert('후기 수정 완료');</script>";
+            echo "<script>location.href='./doctorinfo.php';</script>";
+
         } else {
             echo "<script>alert('본인이 작성한 후기만 편집할 수 있습니다.');</script>";
             echo "<script>location.href='./doctorinfo.php';</script>";
