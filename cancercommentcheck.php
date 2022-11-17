@@ -9,7 +9,7 @@
     } else {
 
         echo "<script>
-            if(confirm('댓글을 편집하시려면 (확인)을, 삭제하시려면 (취소)를 클릭해주세요.')){
+            if(confirm('댓글을 수정하시려면 (확인)을, 삭제하시려면 (취소)를 클릭해주세요.')){
                 location.href='./cancercommentedit.html';
             }
             else {

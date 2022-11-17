@@ -6,7 +6,9 @@
     <input type='text' name='name' placeholder='의사 이름'>
     <input type='submit' value='검색'>
     <div style='text-align: center;'></div><a class='buttonReverse' href='main.html' style='text-align: center;'>뒤로가기</a></div>
-    <input type='submit' name='review' value='후기순으로 보기'></form>";
+    <input type='submit' name='review' value='후기순으로 보기'> <a class='buttonReverse' href='./doctordepartment.php'>진료 가능과 한 번에 보기</a> </form>
+    
+";
 
     $mysqli = mysqli_connect("localhost","team09","team09","team09");
     if($mysqli==false){
@@ -74,10 +76,6 @@
               $department=isset($row['department'])?($row['department']):0;
               $field=isset($row['field'])?($row['field']):0;
               $site=isset($row['site'])?($row['site']):0;
-              // echo "
-              // <form action='doctorcomment.php' method='post' style='text-align:center:'>
-              // <tr><td>$doctor_ID</td><td>$doctor_name</td><td>$hospital</td><td>$department</td><td>$field</td><td><a href='".$site."'>$site</a></td><td><input class='button' type='submit' name='ii' value='후기'></td></tr>
-              // </form>";
               echo "
               <form action='doctorcomment.php' method='post' style='text-align:center:'>
               <tr><td>$doctor_ID</td><td>$doctor_name</td><td>$hospital</td><td>$department</td><td>$field</td><td><a href='".$site."'>$site</a></td><td><button name='comment' value='".$doctor_ID."' type='submit' class='button'>후기</td></tr></form>";

@@ -24,7 +24,7 @@
         }
         else
         {
-            echo "<script>alert('본인이 작성한 댓글만 편집할 수 있습니다.');</script>";
+            echo "<script>alert('본인이 작성한 댓글만 수정할 수 있습니다.');</script>";
             echo "<script>location.href='./cancerinfo.html';</script>";
         }
     }

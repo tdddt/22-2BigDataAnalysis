@@ -1,3 +1,5 @@
+use team09;
+
 drop table 간암체크리스트;
 drop table 위암체크리스트;
 drop table 대장암체크리스트;

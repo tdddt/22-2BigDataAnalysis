@@ -1,3 +1,5 @@
+use team09;
+
 /*patient insert*/
 load data local infile 'C:\\xampp\\htdocs\\team09\\patient.csv' into table patient fields terminated by ',' lines terminated by '\n';
 
@@ -166,3 +168,14 @@ insert into cancerComment values (1, 4, '위암', '정기적으로 내시경을 
     (18, 11, '신장암', '운동과 건강관리 열심히 해야겠습니다.'),
     (19, 2, '담도암', '민물고기가 위험하다니 처음 알았어요.'),
     (20, 12, '담도암', '예후가 좋지 않은 암이군요ㅠㅠ');
+
+insert into checkresult values
+  (7,'폐암','2,4,6',3),
+  (7,'대장암','1,3,9',3),
+  (9,'간암','1,2,3,4',4),
+  (9,'위암','1,2',2),
+  (9,'폐암','2,4',2),
+  (1,'위암','1,2,3,4,5,7,8,9',8),
+  (1,'폐암','1,2,3,4,5,7,8,9,10',9),
+  (1,'간암','1,2,3,4,5,6',6),
+  (1,'대장암','1,2,3,4,5,6,9',7);
